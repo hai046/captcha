@@ -50,6 +50,7 @@ import (
 	"errors"
 	"io"
 	"time"
+	"fmt"
 )
 
 const (
@@ -94,7 +95,11 @@ func NewValue(length int) (id, value string) {
 	id = randomId()
 	buff := RandomDigits(length)
 	globalStore.Set(id, buff)
-	value = string(buff)
+
+	for _, v := range buff {
+		value = fmt.Sprintf("%s%d", value, v)
+	}
+	//value = string(buff)
 	return
 }
 

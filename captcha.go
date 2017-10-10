@@ -88,6 +88,15 @@ func NewLen(length int) (id string) {
 	return
 }
 
+// NewLen is just like New, but accepts length of a captcha solution as the
+// argument.
+func NewValue(length int) (string) {
+	id := randomId()
+	buff := RandomDigits(length)
+	globalStore.Set(id, buff)
+	return string(buff)
+}
+
 // Reload generates and remembers new digits for the given captcha id.  This
 // function returns false if there is no captcha with the given id.
 //

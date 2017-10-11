@@ -103,6 +103,22 @@ func NewValue(length int) (id, value string) {
 	return
 }
 
+func SetId(value string) {
+	ns := make([]byte, len(value))
+	for i := range ns {
+		d := value[i]
+		switch {
+		case '0' <= d && d <= '9':
+			ns[i] = d - '0'
+		case d == ' ' || d == ',':
+		default:
+			// ignore
+		}
+	}
+	globalStore.Set(value, ns)
+	return
+}
+
 // Reload generates and remembers new digits for the given captcha id.  This
 // function returns false if there is no captcha with the given id.
 //

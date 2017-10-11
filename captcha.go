@@ -103,7 +103,7 @@ func NewValue(length int) (id, value string) {
 	return
 }
 
-func SetId(value string) {
+func SetSameIdAndValue(value string) {
 	ns := make([]byte, len(value))
 	for i := range ns {
 		d := value[i]

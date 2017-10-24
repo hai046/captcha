@@ -1,7 +1,7 @@
 Package captcha
 =====================
 
-修改部分方法，暴露部分发放，使用RPC供java端调用
+图片验证码 修改部分方法，暴露部分方法，使用RPC供java端调用
 
 	import "github.com/dchest/captcha"
 

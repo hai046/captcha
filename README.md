@@ -1,6 +1,8 @@
 Package captcha
 =====================
 
+修改部分方法，暴露部分发放，使用RPC供java端调用
+
 	import "github.com/dchest/captcha"
 
 Package captcha implements generation and verification of image and audio
